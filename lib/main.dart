@@ -1,4 +1,7 @@
+import 'package:ayuda/models/questions_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'screens/quiz_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -7,21 +10,16 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ayuda',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
-          body: Container(
-        child: Center(
-          child: Text(
-            'Ayuda',
-            style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-          ),
+    return ChangeNotifierProvider(
+      create: (ctx) => QuestionsProvider(),
+      child: MaterialApp(
+        title: 'Ayuda',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+//        visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-      )),
+        home: QuizScreen(),
+      ),
     );
   }
 }
