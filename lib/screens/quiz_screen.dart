@@ -1,10 +1,7 @@
 import 'dart:async';
-
-import 'package:ayuda/models/questions_provider.dart';
+import 'package:ayuda/Services/TimerService.dart';
 import 'package:provider/provider.dart';
-
-import '../models/question.dart';
-import '../models/questions_provider.dart';
+import '../VIewModel/questions_provider.dart';
 import 'package:flutter/material.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -18,6 +15,7 @@ class _QuizScreenState extends State<QuizScreen> {
   bool init = true;
   bool cancelTimer = false;
   Timer timer;
+  dynamic qTimer;
 
   @override
   void didChangeDependencies() {
@@ -30,6 +28,7 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   void nextQuestion(BuildContext ctx) {
+    qTimer = QuestionTimer().stream;
     _timer = 30;
     Provider.of<QuestionsProvider>(ctx, listen: false).updateQuestion();
     startTimer(ctx);
@@ -125,3 +124,4 @@ class _QuizScreenState extends State<QuizScreen> {
     );
   }
 }
+ 
