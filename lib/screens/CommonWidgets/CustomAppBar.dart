@@ -1,6 +1,5 @@
-import 'package:ayuda/Utils/Colors.dart';
-import 'package:ayuda/screens/CommonWidgets/RoundedBox.dart';
-import 'package:ayuda/screens/CommonWidgets/tempraryLogo.dart';
+
+import 'tempraryLogo.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {
@@ -9,16 +8,6 @@ class CustomAppBar extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-//        Expanded(
-//          flex: 1,
-//          child: Material(
-//            borderRadius: BorderRadius.all(Radius.circular(10)),
-//            shadowColor: darkColor,
-//            elevation: 10,
-//            child: C
-//            ),
-//          ),
-//        ),
         Expanded(
           flex: 8,
           child: SizedBox(
