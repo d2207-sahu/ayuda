@@ -1,4 +1,3 @@
-
 import 'package:ayuda/Utils/Colors.dart';
 import 'package:ayuda/Utils/TextStyles.dart';
 import 'package:ayuda/screens/drawer_screen.dart';
@@ -10,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'CommonWidgets/LeaderBoardTile.dart';
 import 'CommonWidgets/ScheduleTile.dart';
 import 'CommonWidgets/tempraryLogo.dart';
-
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -134,8 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ],
           ),
-
-       
+        ),
       ),
     );
   }

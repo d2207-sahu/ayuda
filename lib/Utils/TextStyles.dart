@@ -28,3 +28,6 @@ final loadingHeader2 = TextStyle(
   fontSize: 40,
   fontWeight: FontWeight.bold,
 );
+final drawerText =
+TextStyle(color: underTextColor, fontSize: 20, fontWeight: FontWeight.bold);
+
