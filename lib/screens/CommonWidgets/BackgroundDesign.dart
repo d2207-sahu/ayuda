@@ -22,6 +22,7 @@ class BackgroundDesign extends StatelessWidget {
           ),
         ),
         height: MediaQuery.of(context).size.height * heightFraction,
+        width: MediaQuery.of(context).size.width,
       ),
     );
   }
