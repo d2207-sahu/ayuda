@@ -1,5 +1,5 @@
 import 'package:ayuda/Utils/Colors.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 /// Text Styles
 final normal = TextStyle(
@@ -16,4 +16,15 @@ final heading = TextStyle(
 final subNormal = TextStyle(
   color: underTextColor,
   fontSize: 16,
+);
+
+final loadingHeader1 = TextStyle(
+  color: mainColor,
+  fontSize: 30,
+);
+
+final loadingHeader2 = TextStyle(
+  color: mainColor,
+  fontSize: 40,
+  fontWeight: FontWeight.bold,
 );
