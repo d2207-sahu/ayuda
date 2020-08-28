@@ -7,7 +7,7 @@ final normal = TextStyle(
   fontSize: 18,
 );
 
-final heading = TextStyle(
+const heading = TextStyle(
   color: darkColor,
   fontSize: 20,
   fontWeight: FontWeight.bold,
@@ -17,3 +17,5 @@ final subNormal = TextStyle(
   color: underTextColor,
   fontSize: 16,
 );
+final drawerText =
+    TextStyle(color: underTextColor, fontSize: 20, fontWeight: FontWeight.bold);

@@ -53,7 +53,12 @@ class LeaderBoardTile extends StatelessWidget {
                   RaisedButton(
                     color: contrastColor,
                     onPressed: () {
-                      // navigate to LeaderBoard Details Page
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (BuildContext context) =>
+                      //         EditProfileScreen(),
+                      //   ),);
                     },
                     child: Text(
                       'View Detail',

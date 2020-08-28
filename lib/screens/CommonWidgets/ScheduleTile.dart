@@ -62,7 +62,14 @@ class ScheduleTile extends StatelessWidget {
                       Icons.play_arrow,
                       color: Colors.white,
                     ),
-                    onTap: () {},
+                    onTap: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (BuildContext context) =>
+                      //         XXScreen(),
+                      //   ),);
+                    },
                   )
                 ],
               ),

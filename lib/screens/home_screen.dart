@@ -1,5 +1,6 @@
 import 'package:ayuda/Utils/Colors.dart';
 import 'package:ayuda/Utils/TextStyles.dart';
+import 'package:ayuda/screens/drawer_screen.dart';
 import 'CommonWidgets/BackgroundDesign.dart';
 import 'CommonWidgets/RoundedBox.dart';
 import 'package:flutter/cupertino.dart';
@@ -15,9 +16,13 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: DrawerScreen(),
       body: DefaultTabController(
         initialIndex: 0,
         length: 2,
@@ -26,27 +31,6 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               BackgroundDesign(
                 heightFraction: 0.15,
-              ),
-
-              /// Drawer
-              Positioned(
-                top: 8,
-                left: 8,
-                child: InkWell(
-                  splashColor: contrastColor,
-                  onTap: () {
-                    //  TODO: OpenDrawer
-                  },
-                  child: RoundedBox(
-                    color: contrastColor,
-                    padding: const EdgeInsets.all(8),
-                    child: Icon(
-                      Icons.menu,
-                      size: 26,
-                      color: mainColor,
-                    ),
-                  ),
-                ),
               ),
 
               /// Logo
@@ -125,6 +109,24 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ],
+                  ),
+                ),
+              ),
+
+              /// Drawer
+              Positioned(
+                top: 16,
+                left: 16,
+                child: RoundedBox(
+                  onTap: () {
+                    _scaffoldKey.currentState.openDrawer();
+                  },
+                  color: contrastColor,
+                  padding: const EdgeInsets.all(8),
+                  child: Icon(
+                    Icons.menu,
+                    size: 26,
+                    color: mainColor,
                   ),
                 ),
               ),

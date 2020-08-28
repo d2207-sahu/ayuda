@@ -40,7 +40,7 @@ class RoundedBox extends StatelessWidget {
               color: shadowColor,
               spreadRadius: 1,
               blurRadius: 10,
-            )
+            ),
           ],
         ),
         child: child,
