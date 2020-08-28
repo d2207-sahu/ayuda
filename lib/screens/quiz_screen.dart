@@ -23,7 +23,6 @@ class _QuizScreenState extends State<QuizScreen> {
       startTimer(context);
       init = false;
     }
-
     super.didChangeDependencies();
   }
 
