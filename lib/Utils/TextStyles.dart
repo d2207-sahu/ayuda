@@ -29,5 +29,4 @@ final loadingHeader2 = TextStyle(
   fontWeight: FontWeight.bold,
 );
 final drawerText =
-TextStyle(color: underTextColor, fontSize: 20, fontWeight: FontWeight.bold);
-
+    TextStyle(color: underTextColor, fontSize: 20, fontWeight: FontWeight.bold);
