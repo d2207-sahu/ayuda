@@ -36,23 +36,24 @@ class QuestionCard extends StatelessWidget {
           width: screenWidth * 0.8,
         ),
         Container(
-            margin: EdgeInsets.only(
-                left: screenWidth * 0.35,
-                right: screenWidth * 0.35,
-                top: screenHeight * 0.16),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                CircleAvatar(
-                  radius: 55,
-                  backgroundColor: contrastColor,
-                ),
-                CircleAvatar(
-                  radius: 40,
-                  backgroundColor: mainColor,
-                ),
-              ],
-            ))
+          margin: EdgeInsets.only(
+              left: screenWidth * 0.35,
+              right: screenWidth * 0.35,
+              top: screenHeight * 0.16),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              CircleAvatar(
+                radius: 55,
+                backgroundColor: contrastColor,
+              ),
+              CircleAvatar(
+                radius: 40,
+                backgroundColor: mainColor,
+              ),
+            ],
+          ),
+        )
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:ayuda/Utils/Colors.dart';
 import 'package:ayuda/Utils/TextStyles.dart';
+import '../leaderboard_screen.dart';
 import 'RoundedBox.dart';
 import 'package:flutter/material.dart';
 
@@ -53,12 +54,13 @@ class LeaderBoardTile extends StatelessWidget {
                   RaisedButton(
                     color: contrastColor,
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (BuildContext context) =>
-                      //         EditProfileScreen(),
-                      //   ),);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              LeaderBoardScreen(),
+                        ),
+                      );
                     },
                     child: Text(
                       'View Detail',

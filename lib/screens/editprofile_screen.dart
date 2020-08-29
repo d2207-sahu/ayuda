@@ -1,6 +1,7 @@
 import 'package:ayuda/Utils/Colors.dart';
 import 'package:ayuda/Utils/TextStyles.dart';
 import 'package:ayuda/Utils/constant.dart';
+import 'package:ayuda/screens/CommonWidgets/question_card.dart';
 import 'package:flutter/material.dart';
 
 import 'CommonWidgets/BackgroundDesign.dart';

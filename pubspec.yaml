@@ -24,3 +24,9 @@ flutter:
 
   uses-material-design: true
 
+  fonts:
+    - family: iCiel Gotham
+      fonts:
+        - asset: assets/iCiel Gotham-Medium.ttf
+        - asset: assets/iCiel Gotham-Ultra.ttf
+

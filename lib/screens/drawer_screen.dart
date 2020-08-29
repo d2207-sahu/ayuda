@@ -4,6 +4,8 @@ import 'package:ayuda/screens/editprofile_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'CommonWidgets/EnhancedRoundedBox.dart';
+
 class DrawerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -33,11 +35,12 @@ class DrawerScreen extends StatelessWidget {
               //     ),
               //   ),
               // ),
+              EnhancedRoundedBox(),
               Positioned(
                 top: height * 0.4,
                 right: 16,
                 left: 32,
-                bottom: height * 0.25,
+                bottom: height * 0.35,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,17 +69,6 @@ class DrawerScreen extends StatelessWidget {
                       flex: 1,
                       child: FlatButton(
                         child: Text(
-                          'Settings',
-                          style: drawerText,
-                          textAlign: TextAlign.start,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
-                    Expanded(
-                      flex: 1,
-                      child: FlatButton(
-                        child: Text(
                           'About Us',
                           style: drawerText,
                           textAlign: TextAlign.start,
@@ -88,7 +80,7 @@ class DrawerScreen extends StatelessWidget {
                       flex: 1,
                       child: FlatButton(
                         child: Text(
-                          'Rate our App',
+                          'Logout',
                           textAlign: TextAlign.start,
                           style: drawerText,
                         ),
@@ -98,7 +90,6 @@ class DrawerScreen extends StatelessWidget {
                   ],
                 ),
               ),
-
               // CustomRoundedBox(0.5),
             ],
           ),
