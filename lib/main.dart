@@ -1,4 +1,6 @@
+import 'package:ayuda/screens/CommonWidgets/question_card.dart';
 import 'package:ayuda/screens/loading_screen.dart';
+import 'file:///C:/Users/Arnav/StudioProjects/ayuda/lib/screens/CommonWidgets/timer_widget.dart';
 import 'file:///C:/Users/Arnav/StudioProjects/ayuda/lib/screens/CommonWidgets/question_card.dart';
 
 import 'screens/home_screen.dart';
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
 
         ///  Placing Different Screen to make the UI for Now.
-        home: HomeScreen(),
+        home: QuizScreen(),
       ),
     );
   }

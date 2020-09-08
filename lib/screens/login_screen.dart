@@ -1,8 +1,8 @@
-import 'package:ayuda/Utils/TextStyles.dart';
-import 'package:ayuda/screens/CommonWidgets/BackgroundDesign.dart';
-import 'package:ayuda/screens/CommonWidgets/RoundedBox.dart';
 import 'package:flutter/material.dart';
 
+import '../Utils/TextStyles.dart';
+import '../screens/CommonWidgets/BackgroundDesign.dart';
+import '../screens/CommonWidgets/RoundedBox.dart';
 import 'CommonWidgets/tempraryLogo.dart';
 
 class LoginScreen extends StatelessWidget {

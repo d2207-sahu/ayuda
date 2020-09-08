@@ -5,12 +5,16 @@ import 'package:flutter/material.dart';
 /// Just add the child in the box
 class RoundedBox extends StatelessWidget {
   final Widget child;
+  final double height;
+  final double width;
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry margin;
   final VoidCallback onTap;
 
   RoundedBox({
     @required this.child,
+    this.height,
+    this.width,
     this.padding,
     this.margin,
     this.onTap,
@@ -21,8 +25,10 @@ class RoundedBox extends StatelessWidget {
     return GestureDetector(
       onTap: onTap == null ? () {} : onTap,
       child: Container(
-        padding: padding,
+        height: height,
+        width: width,
         margin: margin,
+        padding: padding,
         decoration: BoxDecoration(
           color: mainColor,
           borderRadius: BorderRadius.all(

@@ -1,37 +1,39 @@
-import 'dart:async';
-import 'package:ayuda/Services/TimerService.dart';
-import 'package:provider/provider.dart';
-import '../VIewModel/questions_provider.dart';
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:provider/provider.dart';
+
+import '../Utils/Colors.dart';
+import './CommonWidgets/question_card.dart';
+import '../VIewModel/questions_provider.dart';
+import 'CommonWidgets/RoundedBox.dart';
+import 'CommonWidgets/timer_widget.dart';
 
 class QuizScreen extends StatefulWidget {
   @override
   _QuizScreenState createState() => _QuizScreenState();
 }
 
-class _QuizScreenState extends State<QuizScreen> {
+class _QuizScreenState extends State<QuizScreen>
+    with SingleTickerProviderStateMixin {
+  AnimationController _animationController;
   int _timer = 30;
   String showTimer = '30';
   bool init = true;
   bool cancelTimer = false;
   Timer timer;
-  dynamic qTimer;
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     if (init) {
       startTimer(context);
+
       init = false;
     }
-
-    super.didChangeDependencies();
   }
 
   void nextQuestion(BuildContext ctx) {
-    qTimer = QuestionTimer().stream;
-    _timer = 30;
     Provider.of<QuestionsProvider>(ctx, listen: false).updateQuestion();
-    startTimer(ctx);
   }
 
   void startTimer(BuildContext ctx) async {
@@ -44,7 +46,6 @@ class _QuizScreenState extends State<QuizScreen> {
       setState(() {
         if (_timer < 1) {
           t.cancel();
-          nextQuestion(ctx);
         } else {
           _timer = _timer - 1;
         }
@@ -54,73 +55,89 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 30),
+    );
+    _animationController.addListener(() {
+      if (_animationController.isCompleted) {
+        timer.cancel();
+        _timer = 30;
+        startTimer(context);
+        _animationController.forward(from: 0.0);
+        nextQuestion(context);
+      }
+    });
+    _animationController.forward();
+  }
+
+  Widget addOptions(
+      double screenWidth, double screenHeight, String questionTitle) {
+    return RoundedBox(
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          questionTitle,
+          textAlign: TextAlign.justify,
+          style: TextStyle(fontSize: 17),
+        ),
+      ),
+      height: screenHeight * 0.07,
+      width: screenWidth * 0.70,
+      margin: EdgeInsets.only(top: screenHeight * 0.04),
+      padding: EdgeInsets.symmetric(
+          horizontal: screenWidth * 0.04, vertical: screenHeight * 0.01),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _animationController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final _question = Provider.of<QuestionsProvider>(context).theQuestion;
-
+    final _screenWidth = MediaQuery.of(context).size.width;
+    final _screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Where the fun begins'),
-      ),
-      body: _question == null
-          ? Center(
-              child: Text(
-                'Thank You For Playing',
-                style: TextStyle(fontSize: 30),
-              ),
-            )
-          : Container(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        body: _question == null
+            ? Center(
+                child: Text("Thank you for playing"),
+              )
+            : Column(
                 children: [
-                  Center(
-                      child: Text(
-                    _question.questionTitle,
-                    style: TextStyle(fontSize: 25),
-                  )),
-                  Column(
+                  Stack(
                     children: [
-                      RaisedButton(
-                        padding: EdgeInsets.only(left: 20, right: 20),
-                        child: Text(_question.options[0],
-                            style: TextStyle(fontSize: 22)),
-                        onPressed: () {
-                          cancelTimer = true;
-                          nextQuestion(context);
-                        },
+                      QuestionCard(
+                        mediaQueryData: MediaQuery.of(context),
+                        titleOfQuestion: _question.questionTitle,
                       ),
-                      SizedBox(
-                        height: 10,
+                      TimerWidget(
+                        animationController: _animationController,
+                        backgroundColor: mainColor,
+                        color: contrastColor,
+                        mediaQueryData: MediaQuery.of(context),
                       ),
-                      RaisedButton(
-                        padding: EdgeInsets.only(left: 20, right: 20),
-                        child: Text(_question.options[1],
-                            style: TextStyle(fontSize: 22)),
-                        onPressed: () {
-                          cancelTimer = true;
-                          nextQuestion(context);
-                        },
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      RaisedButton(
-                        padding: EdgeInsets.only(left: 20, right: 20),
-                        child: Text(_question.options[2],
-                            style: TextStyle(fontSize: 22)),
-                        onPressed: () {
-                          cancelTimer = true;
-                          nextQuestion(context);
-                        },
+                      Container(
+                        alignment: Alignment.center,
+                        margin: EdgeInsets.only(
+                            top: _screenHeight * 0.225,
+                            right: _screenWidth * 0.025),
+                        child: Text(
+                          showTimer,
+                          style: TextStyle(fontSize: 35),
+                        ),
                       )
                     ],
                   ),
-                  Text(
-                    showTimer,
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                  ),
+                  addOptions(_screenWidth, _screenHeight, _question.options[0]),
+                  addOptions(_screenWidth, _screenHeight, _question.options[1]),
+                  addOptions(_screenWidth, _screenHeight, _question.options[2]),
                 ],
-              ),
-            ),
-    );
+              ));
   }
 }
