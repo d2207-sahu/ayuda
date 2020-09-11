@@ -10,7 +10,6 @@ class LoadingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: QuestionCard(
-        mediaQueryData: MediaQuery.of(context),
         titleOfQuestion: "Something",
       ),
 //      body: Stack(

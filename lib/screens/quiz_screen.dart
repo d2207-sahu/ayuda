@@ -1,3 +1,5 @@
+import 'package:ayuda/Utils/TextStyles.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';
@@ -114,23 +116,30 @@ class _QuizScreenState extends State<QuizScreen>
                   Stack(
                     children: [
                       QuestionCard(
-                        mediaQueryData: MediaQuery.of(context),
                         titleOfQuestion: _question.questionTitle,
                       ),
-                      TimerWidget(
-                        animationController: _animationController,
-                        backgroundColor: mainColor,
-                        color: contrastColor,
-                        mediaQueryData: MediaQuery.of(context),
-                      ),
-                      Container(
+                      Align(
                         alignment: Alignment.center,
-                        margin: EdgeInsets.only(
-                            top: _screenHeight * 0.225,
-                            right: _screenWidth * 0.025),
-                        child: Text(
-                          showTimer,
-                          style: TextStyle(fontSize: 35),
+                        child: TimerWidget(
+                          animationController: _animationController,
+                          backgroundColor: mainColor,
+                          color: contrastColor,
+                          mediaQueryData: MediaQuery.of(context),
+                        ),
+                      ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          alignment: Alignment.center,
+                          height: 130,
+                          margin: EdgeInsets.only(
+                              top: MediaQuery.of(context).size.height * 0.16),
+                          child: Center(
+                            child: Text(
+                              showTimer,
+                              style: heading.copyWith(fontSize: 35),
+                            ),
+                          ),
                         ),
                       )
                     ],
