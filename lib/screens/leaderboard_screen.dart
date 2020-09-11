@@ -171,10 +171,12 @@ class UserTile extends StatelessWidget {
                       Text(
                         mainText ?? 'Divyanshu Shua',
                         textAlign: TextAlign.start,
-                        style: heading.copyWith(fontSize: 18),
+                        maxLines: 2,
+                        style: heading.copyWith(fontSize: 20),
                       ),
                       Text(
                         secondaryText ?? 'sexyBio',
+                        maxLines: 1,
                         textAlign: TextAlign.start,
                         style: subNormal.copyWith(fontSize: 14),
                       ),
@@ -187,7 +189,7 @@ class UserTile extends StatelessWidget {
           Flexible(
             flex: 2,
             child: Text(
-              titleText ?? '99 / 30',
+              titleText ?? '99/30',
               style: heading.copyWith(fontSize: 15),
             ),
           )
@@ -245,7 +247,7 @@ class StatisticsTile extends StatelessWidget {
             style: normal,
           ),
           Text(
-            titleText ?? '99 / 30',
+            titleText ?? '99/30',
             style: heading.copyWith(fontSize: 15),
           ),
         ],

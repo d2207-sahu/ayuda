@@ -10,7 +10,7 @@ final heading = TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.bold,
     wordSpacing: 20,
-    letterSpacing: 1,
+    letterSpacing: 0.5,
     fontFamily: 'iCiel Gotham');
 
 final subNormal =

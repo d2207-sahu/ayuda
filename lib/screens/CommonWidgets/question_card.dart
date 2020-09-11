@@ -31,7 +31,6 @@ class QuestionCard extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: shadowColor,
-                    offset: const Offset(0, 0),
                     blurRadius: 10,
                     spreadRadius: 6,
                   ),
@@ -50,7 +49,6 @@ class QuestionCard extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                     color: shadowColor,
-                    offset: const Offset(0, 0),
                     blurRadius: 10,
                     spreadRadius: 6,
                   )
