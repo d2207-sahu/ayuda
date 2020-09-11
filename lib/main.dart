@@ -1,3 +1,6 @@
+
+import 'package:ayuda/screens/CommonWidgets/question_card.dart';
+import 'package:ayuda/screens/loading_screen.dart';
 import 'Utils/Colors.dart';
 import 'screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
 
         ///  Placing Different Screen to make the UI for Now.
-        home: HomeScreen(),
+        home: QuizScreen(),
       ),
     );
   }

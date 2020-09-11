@@ -10,6 +10,7 @@ import 'CommonWidgets/LeaderBoardTile.dart';
 import 'CommonWidgets/ScheduleTile.dart';
 import 'CommonWidgets/tempraryLogo.dart';
 
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -20,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       key: _scaffoldKey,
       drawer: DrawerScreen(),
@@ -135,5 +137,6 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
+
   }
 }
