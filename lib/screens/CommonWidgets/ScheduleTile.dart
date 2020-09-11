@@ -2,6 +2,7 @@ import 'package:ayuda/Utils/Colors.dart';
 import 'package:ayuda/Utils/TextStyles.dart';
 import 'package:flutter/material.dart';
 
+import '../quiz_screen.dart';
 import 'RoundedBox.dart';
 
 //TODO: make Model Class According to Need
@@ -48,8 +49,11 @@ class ScheduleTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    '22am',
-                    style: subNormal.copyWith(fontSize: 13),
+                    '22 am',
+                    style: subNormal.copyWith(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5),
                   ),
                   SizedBox(
                     height: 15,
@@ -63,12 +67,12 @@ class ScheduleTile extends StatelessWidget {
                       color: Colors.white,
                     ),
                     onTap: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (BuildContext context) =>
-                      //         XXScreen(),
-                      //   ),);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => QuizScreen(),
+                        ),
+                      );
                     },
                   )
                 ],

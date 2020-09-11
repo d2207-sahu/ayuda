@@ -16,7 +16,7 @@ class LeaderBoardTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Flexible(
-              flex: 8,
+              flex: 6,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -46,7 +46,10 @@ class LeaderBoardTile extends StatelessWidget {
                 children: [
                   Text(
                     '22 / 30',
-                    style: subNormal.copyWith(fontSize: 13),
+                    style: subNormal.copyWith(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5),
                   ),
                   SizedBox(
                     height: 15,
@@ -64,7 +67,9 @@ class LeaderBoardTile extends StatelessWidget {
                     },
                     child: Text(
                       'View Detail',
-                      style: normal.copyWith(color: Colors.white),
+                      style: normal.copyWith(
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],

@@ -31,10 +31,10 @@ class QuestionCard extends StatelessWidget {
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: Colors.black54,
-                offset: const Offset(0, 0.5),
-                blurRadius: 12,
-                spreadRadius: 2,
+                color: shadowColor,
+                offset: const Offset(0, 0),
+                blurRadius: 10,
+                spreadRadius: 6,
               ),
             ],
           ),
@@ -47,10 +47,10 @@ class QuestionCard extends StatelessWidget {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.black54,
-                offset: const Offset(0, 0.5),
-                blurRadius: 12,
-                spreadRadius: 2,
+                color: shadowColor,
+                offset: const Offset(0, 0),
+                blurRadius: 10,
+                spreadRadius: 6,
               )
             ],
             borderRadius: BorderRadius.circular(30),
@@ -81,24 +81,6 @@ class QuestionCard extends StatelessWidget {
             shape: BoxShape.circle,
           ),
         ),
-//        Container(
-//            margin: EdgeInsets.only(
-//                left: screenWidth * 0.35,
-//                right: screenWidth * 0.35,
-//                top: screenHeight * 0.16),
-//            child: Stack(
-//              alignment: Alignment.center,
-//              children: [
-//                CircleAvatar(
-//                  radius: 55,
-//                  backgroundColor: contrastColor,
-//                ),
-//                CircleAvatar(
-//                  radius: 40,
-//                  backgroundColor: mainColor,
-//                ),
-//              ],
-//            ))
       ],
     );
   }
