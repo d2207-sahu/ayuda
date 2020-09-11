@@ -1,14 +1,11 @@
+
 import 'package:ayuda/screens/CommonWidgets/question_card.dart';
 import 'package:ayuda/screens/loading_screen.dart';
-import 'file:///C:/Users/Arnav/StudioProjects/ayuda/lib/screens/CommonWidgets/timer_widget.dart';
-import 'file:///C:/Users/Arnav/StudioProjects/ayuda/lib/screens/CommonWidgets/question_card.dart';
-
+import 'Utils/Colors.dart';
 import 'screens/home_screen.dart';
-import 'screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'VIewModel/questions_provider.dart';
-import 'screens/quiz_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,7 +21,9 @@ class MyApp extends StatelessWidget {
         title: 'Ayuda',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          highlightColor: contrastColor,
+          primaryColor: contrastColor,
+          accentColor: lightColor,
         ),
 
         ///  Placing Different Screen to make the UI for Now.

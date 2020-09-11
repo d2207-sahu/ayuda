@@ -10,11 +10,18 @@ class RoundedBox extends StatelessWidget {
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry margin;
   final VoidCallback onTap;
+  final Color color;
+  final BoxShape shape;
 
   RoundedBox({
     @required this.child,
+
     this.height,
     this.width,
+
+    this.color,
+    this.shape,
+
     this.padding,
     this.margin,
     this.onTap,
@@ -30,16 +37,19 @@ class RoundedBox extends StatelessWidget {
         margin: margin,
         padding: padding,
         decoration: BoxDecoration(
-          color: mainColor,
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
+          color: color ?? mainColor,
+          shape: shape ?? BoxShape.rectangle,
+          borderRadius: shape != null
+              ? null
+              : BorderRadius.all(
+                  Radius.circular(10),
+                ),
           boxShadow: [
             BoxShadow(
               color: shadowColor,
               spreadRadius: 1,
               blurRadius: 10,
-            )
+            ),
           ],
         ),
         child: child,

@@ -30,6 +30,7 @@ class _QuizScreenState extends State<QuizScreen>
 
       init = false;
     }
+    super.didChangeDependencies();
   }
 
   void nextQuestion(BuildContext ctx) {
